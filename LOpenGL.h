@@ -1,6 +1,6 @@
 //
 //  LOpenGl.h
-//  Tomb Raider
+//  Dungeon_Game
 //
 //  Created by Roberto Ockerse on 28/01/2017.
 //  Copyright © 2017 Roberto Ockerse. All rights reserved.
