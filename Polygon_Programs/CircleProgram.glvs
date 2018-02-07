@@ -1,0 +1,30 @@
+#version 330
+// unifor variables for the program a projection matrix a modelView matrix and a center point for the circle
+uniform mat4 LProjectionMatrix;
+uniform mat4 LModelViewMatrix;
+uniform vec2 LCenter;
+
+//vertex position attributes
+
+in vec2  LVertexPos;
+
+
+//Multicolor attributes
+in vec4 LColor;
+//variables that will be send to the fragment shader
+out vec4 Color;
+out vec2 Center;
+
+
+void main()
+{
+    
+    //set the variables that will be send to the fragement shader.
+    Color = LColor;
+    Center = LCenter;
+    //Procces vertex
+    gl_Position = LProjectionMatrix * LModelViewMatrix * vec4( LVertexPos.x, LVertexPos.y, 0.0f, 1.0f );
+
+    
+    
+}
