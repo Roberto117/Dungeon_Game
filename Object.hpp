@@ -1,6 +1,6 @@
 //
 //  Object.hpp
-//  Tomb Raider
+//  Dungeon_Game
 //
 //  Created by Roberto Ockerse on 09/02/2017.
 //  Copyright © 2017 Roberto Ockerse. All rights reserved.

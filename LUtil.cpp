@@ -1,6 +1,6 @@
 //
 //  LUtil.cpp
-//  Tomb Raider
+//  Dungeon_Game
 //
 //  Created by Roberto Ockerse on 06/02/2017.
 //  Copyright © 2017 Roberto Ockerse. All rights reserved.
@@ -22,7 +22,7 @@
 #include "LTextures.hpp"
 #include "LVertexPos.h"
 
-#include "LFRect.h"0
+#include "LFRect.h"
 #include "LFTri.h"
 
 
@@ -150,20 +150,20 @@ bool initGL()
 bool loadGP()
 {
     //initilize the programs load theird vertex shader and theri fragments shaders return errir if it fails
-    if(!triangleProgram.loadProgram("C:/Polygon_Programs/BasicPolygonProgram.glvs", "C:/Polygon_Programs/BasicPolygonProgram.glfs"))
+    if(!triangleProgram.loadProgram("C:Dungeon_Game/Polygon_Programs/BasicPolygonProgram.glvs", "C:Dungeon_Game/Polygon_Programs/BasicPolygonProgram.glfs"))
     {
         printf("unable to load Triangle Program \n");
         return false;
     }
     
-    if(!rectangleProgram.loadProgram("C:/Polygon_Programs/BasicPolygonProgram.glvs", "C:/Polygon_Programs/BasicPolygonProgram.glfs"))
+    if(!rectangleProgram.loadProgram("C:Dungeon_Game/Polygon_Programs/BasicPolygonProgram.glvs", "C:Dungeon_Game/Polygon_Programs/BasicPolygonProgram.glfs"))
     {
         printf("unable to load Rectangle Program \n");
         return false;
         
     }
     
-    if(!circleProgram.loadProgram("C:/Polygon_Programs/CircleProgram.glvs", "C:/Dungeon_Game/Polygon_Programs/CircleProgram.glfs"))
+    if(!circleProgram.loadProgram("C:Dungeon_Game/Polygon_Programs/CircleProgram.glvs", "C:/Dungeon_Game/Polygon_Programs/CircleProgram.glfs"))
     {
         printf("unable to load circle Program\n");
         return false;
