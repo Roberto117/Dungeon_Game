@@ -116,7 +116,7 @@ bool Slime::dropGoo()
     //if the slime is moving we check how far the slime has moved if the slimes has moved far enough from its size and a little bit drop some goo in order to save space and not constaly drop goo
     if(moving)
     {
-        if( moved >= (Object::getWidth() *2) - 8 )
+        if( moved >= (Object::getWidth() *2) - 15 )
         {
             moved = 0;
             return true;

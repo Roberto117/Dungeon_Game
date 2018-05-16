@@ -32,7 +32,11 @@
 #include "glm/glm.hpp"
 #include "glm/gtx/transform.hpp"
 
+#include "ShaderPrograms.h"
 
+
+
+ShaderPrograms shaderPrograms;
 
 using namespace  std;
 
@@ -150,20 +154,20 @@ bool initGL()
 bool loadGP()
 {
     //initilize the programs load theird vertex shader and theri fragments shaders return errir if it fails
-    if(!triangleProgram.loadProgram("C:Dungeon_Game/Polygon_Programs/BasicPolygonProgram.glvs", "C:Dungeon_Game/Polygon_Programs/BasicPolygonProgram.glfs"))
+    if(!triangleProgram.loadProgram (shaderPrograms.vs_BasicPoylgonProgram, shaderPrograms.fs_BasicPoylgonProgram))
     {
         printf("unable to load Triangle Program \n");
         return false;
     }
     
-    if(!rectangleProgram.loadProgram("C:Dungeon_Game/Polygon_Programs/BasicPolygonProgram.glvs", "C:Dungeon_Game/Polygon_Programs/BasicPolygonProgram.glfs"))
+    if(!rectangleProgram.loadProgram(shaderPrograms.vs_BasicPoylgonProgram, shaderPrograms.fs_BasicPoylgonProgram))
     {
         printf("unable to load Rectangle Program \n");
         return false;
         
     }
     
-    if(!circleProgram.loadProgram("C:Dungeon_Game/Polygon_Programs/CircleProgram.glvs", "C:/Dungeon_Game/Polygon_Programs/CircleProgram.glfs"))
+    if(!circleProgram.loadProgram(shaderPrograms.vs_CircleProgram, shaderPrograms.fs_CircleProgram))
     {
         printf("unable to load circle Program\n");
         return false;
@@ -452,14 +456,14 @@ bool loadMedia()
     modelAmmoBox.setConsumeValue(10);
     
     //set the speed of the model bullets and the damage
-    modelBullet.setSpeed(200.f);
+    modelBullet.setSpeed(17.f);
     modelBullet.setDamage(10);
-    modelPharaohBullet.setSpeed(100.f);
+    modelPharaohBullet.setSpeed(17.f);
     modelPharaohBullet.setDamage(1);
     
     //set the enemies, health, speed, damage,timer and strenght
     modelMummy.setHealth(20);
-    modelMummy.setSpeed(160.f);
+    modelMummy.setSpeed(13.f);
 	sudoMummy.setSpeed(modelMummy.getSpeed());
     modelMummy.setDamage(1);
     modelMummy.setTimer(1.0);
@@ -467,9 +471,8 @@ bool loadMedia()
 
     
     modelSlime.setHealth(30);
-    modelSlime.setSpeed(80.f);
+    modelSlime.setSpeed(3.f);
     modelSlime.setDamage(2);
-    modelSlime.setTimer(1.0);
     modelSlime.setStrenght(20);
     modelSlime.setTimer(0.5);
     modelSlime.setRange(modelSlime.getWidth()*6);
@@ -485,7 +488,7 @@ bool loadMedia()
     
 
     //set the playes speed, health, ammo, and timer.
-	dungeoneer.setSpeed(100.f);
+	dungeoneer.setSpeed(7.f);
     sudoDungeoneer.setSpeed(dungeoneer.getSpeed());
 	dungeoneer.setHealth(10);
 	dungeoneer.setAmmo(30);

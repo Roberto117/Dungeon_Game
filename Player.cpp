@@ -39,7 +39,7 @@ void Player::move(double frameTimeDelta)
     {
         
 		GLfloat currentSpeed = speed * frameTimeDelta;
-        if(slowed) currentSpeed -= 50 * frameTimeDelta;
+        if(slowed) currentSpeed -= 5 * frameTimeDelta;
         
         if(moveUp && posY - height > 20 )  posY -= currentSpeed;
         
