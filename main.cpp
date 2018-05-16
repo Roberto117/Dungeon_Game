@@ -12,6 +12,7 @@
 #include "glm/glm.hpp"
 #include "ScreenConstants.h"
 #include <time.h>
+#include <iostream>
 
 
 
@@ -19,7 +20,7 @@ std::chrono::high_resolution_clock::time_point timeNow;
 
 std::chrono::high_resolution_clock::time_point start;
 
-double frameTimeDelta = 0.025;
+double frameTimeDelta = 0.010;
 
 
 
@@ -35,12 +36,18 @@ void error_callback(int error, const char* description){
 void runMainLoop(void)
 {
 	timeNow = std::chrono::high_resolution_clock::now();
-	std::chrono::duration<double, std::milli > timeSpan = std::chrono::duration_cast<std::chrono::duration<double>>(timeNow - start);
-
+	std::chrono::duration<double>timeSpan = std::chrono::duration_cast<std::chrono::duration<double>>(timeNow - start);
+	std::cout << timeSpan.count() << std::endl;
+	if (timeSpan.count() >= frameTimeDelta)
+	{
+		start = std::chrono::high_resolution_clock::now();
+		update(1);
+	}
+	
 
 
 	
-	update(frameTimeDelta);
+	
     render();
 }
 
@@ -60,7 +67,7 @@ int main( int argc, const char *argv[] )
     
     //initialize the window the FORWARD_COMPAT and OPENGL_CORE PROFILE  are needed for mac use.
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     
@@ -135,9 +142,10 @@ int main( int argc, const char *argv[] )
     
     
     //start the main loop for the program loop will contiue while the program is not closed.
+
+	start = std::chrono::high_resolution_clock::now();
     do
     { 
-		start = std::chrono::high_resolution_clock::now();
 		
         //update and render the program per frame
         runMainLoop();
