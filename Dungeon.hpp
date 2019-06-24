@@ -10,7 +10,7 @@
 #define Dungeon_hpp
 
 #include "LOpenGL.h"
-#include "DLList.hpp"
+#include "DLList.h"
 #include "Sprites.h"
 
 //class that will be used to store the items on a dungeon
@@ -36,8 +36,6 @@ public:
     void getPharaohs(DLList<Pharaoh *> &);
     void getPillars(DLList< Object * > & );
     
-private:
-  
     //List that will be used to store all items in the dungeon
     DLList<Crate * > crates;
     
@@ -54,7 +52,7 @@ private:
     DLList<Object * > pillars;
     
     //variables that will be used to store the number of items in the dungeon
-    
+private:
     int numMummys;
     int numCrates;
     int numConsumables;

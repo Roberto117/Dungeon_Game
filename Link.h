@@ -10,7 +10,6 @@
 #define Link_h
 //a link node that the list will use for sotring and item it contains a next value and a previous value to move thorough the list and item to be store in each node
 template<class Elem>
-
 class Link
 {
 public:

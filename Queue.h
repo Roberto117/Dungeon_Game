@@ -47,7 +47,7 @@ private:
     
 };
 
-#endif /* Queue_h */
+
 //returns the lenght of the list
 template<class Elem>
 int Queue<Elem>::lenght()
@@ -87,3 +87,4 @@ void Queue<Elem>::reset()
     
     front = 1;
 }
+#endif /* Queue_h */

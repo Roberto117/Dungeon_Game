@@ -37,7 +37,7 @@ void runMainLoop(void)
 {
 	timeNow = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<double>timeSpan = std::chrono::duration_cast<std::chrono::duration<double>>(timeNow - start);
-	std::cout << timeSpan.count() << std::endl;
+	//01std::cout << timeSpan.count() << std::endl;
 	if (timeSpan.count() >= frameTimeDelta)
 	{
 		start = std::chrono::high_resolution_clock::now();

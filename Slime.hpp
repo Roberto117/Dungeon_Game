@@ -36,6 +36,7 @@ public:
     
     //get the range of the slime
     GLfloat getRange();
+	void copyMoves(Slime &);
     
 private:
     /*variables for the slime movement
