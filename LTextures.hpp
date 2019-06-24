@@ -20,11 +20,11 @@
 //this functions will be used to upload the objects renderin data
 
 //load the triangle VAO
-GLuint loadTriangleObjectVertexArray(LTexturedTriangle &, LFTri, GLfloat , GLfloat , GLfloat, GLfloat, Object * = nullptr );
+GLuint loadTriangleObjectVertexArray(LTexturedTriangle &, LFTri, GLfloat , GLfloat , GLfloat, GLfloat, Object *  );
 
 
 
 //load the rectangle VAO
-GLuint loadRectangleObjectVertexArray(LTexturedRectangle &, LFRect, GLfloat, GLfloat , GLfloat, GLfloat, Object * =  nullptr);
+GLuint loadRectangleObjectVertexArray(LTexturedRectangle &, LFRect, GLfloat, GLfloat , GLfloat, GLfloat, Object * );
 //load the circle VAO
-GLuint loadCircleObjectVertexArray(LTexturedCircle &, LFRect,  GLfloat, GLfloat , GLfloat, GLfloat, Object * =  nullptr);
+GLuint loadCircleObjectVertexArray(LTexturedCircle &, LFRect,  GLfloat, GLfloat , GLfloat, GLfloat, Object * );

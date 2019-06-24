@@ -144,3 +144,17 @@ bool Slime::hasStoped()
     
     return false;
 }
+
+
+void Slime::copyMoves( Slime &s)
+{
+	range =s.range;
+	target = s.target;
+	moved = s.moved;
+	stoped = s.stoped;
+	moving = s.moving;
+	direction = s .direction;
+	this->slowed = s.slowed;
+	this->timer = s.timer;
+	Object::copyMoves(s);
+}

@@ -15,5 +15,7 @@ const int SCREEN_FPS =60;
 
 enum MARK { UNVISITED = 0, VISITED = 1};
 enum POSTIONS {TOP = 0, BOTTOM, LEFT, RIGHT};
+//a constant that will be used to calulate PI
+const float PI = 3.14159265;
 
 #endif /* ScreenConstants_h */

@@ -34,6 +34,10 @@ void Trap::activate(Character * character)
         case GOO:
             character->isSlowed();
             break;
+		case FIRE:
+			break;
+		case SPIKE:
+			break;
             
         default:
             break;
